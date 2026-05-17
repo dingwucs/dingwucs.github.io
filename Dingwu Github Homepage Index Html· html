@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ding Wu</title>
+  <style>
+    :root {
+      --text: #222;
+      --muted: #666;
+      --line: #e5e7eb;
+      --link: #2563eb;
+      --bg: #ffffff;
+      --soft: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 36px 24px 60px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 48px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 28px;
+      align-self: start;
+      border-right: 1px solid var(--line);
+      padding-right: 28px;
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    .name {
+      font-size: 28px;
+      line-height: 1.2;
+      margin: 0 0 6px;
+      font-weight: 700;
+    }
+
+    .title {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .contact {
+      font-size: 15px;
+      margin: 18px 0;
+    }
+
+    .contact div {
+      margin: 6px 0;
+    }
+
+    .nav {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 15px;
+    }
+
+    .nav a {
+      color: #333;
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    section {
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 0 0 16px;
+      line-height: 1.25;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 22px 0 8px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .item {
+      margin-bottom: 18px;
+    }
+
+    .item-title {
+      font-weight: 650;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    .tagline {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 24px;
+      color: #333;
+    }
+
+    .project-links {
+      margin-top: 6px;
+      font-size: 14px;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        display: block;
+        padding: 26px 18px 42px;
+      }
+
+      .sidebar {
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        padding-right: 0;
+        padding-bottom: 24px;
+        margin-bottom: 30px;
+      }
+
+      .avatar {
+        width: 132px;
+        height: 132px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <!-- Replace avatar.jpg with your own photo file, or delete this line if you do not want a photo. -->
+      <img class="avatar" src="avatar.jpg" alt="Ding Wu" onerror="this.style.display='none'" />
+      <h1 class="name">Ding Wu</h1>
+      <div class="title">AI Researcher · LLMs · RAG · Information Retrieval</div>
+
+      <div class="contact">
+        <div><strong>Email:</strong> <a href="mailto:wuding97@gmail.com">wuding97@gmail.com</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/dingwucs">dingwucs</a></div>
+        <div><strong>Location:</strong> Suzhou / Shanghai / Remote</div>
+      </div>
+
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#interests">Research Interests</a>
+        <a href="#projects">Selected Projects</a>
+        <a href="#news">News</a>
+      </nav>
+    </aside>
+
+    <main>
+      <section id="about">
+        <div class="tagline">
+          I am interested in building reliable, efficient, and knowledge-aware AI systems, with a current focus on retrieval-augmented generation, LLM evaluation, information retrieval, and graph-based reasoning.
+        </div>
+        <h2>About</h2>
+        <p>
+          I am a researcher working at the intersection of artificial intelligence, digital finance, and industrial innovation. My current research interests center on large language models, retrieval-augmented generation, information retrieval, and knowledge-augmented AI systems.
+        </p>
+        <p>
+          Before moving toward computer science research, I received interdisciplinary training in economics, statistics, and data analytics. I am currently preparing research projects and manuscripts in RAG, LLM evaluation, and retrieval systems, with the long-term goal of pursuing a Ph.D. in Computer Science.
+        </p>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <ul>
+          <li><strong>Georgia Institute of Technology</strong>, M.S. in Computer Science, OMSCS, expected Fall 2026</li>
+          <li><strong>University of Pennsylvania</strong>, M.S. in Social Policy and Data Analytics</li>
+          <li><strong>Fudan University</strong>, B.A. / B.S. in Mathematical Economics</li>
+        </ul>
+      </section>
+
+      <section id="interests">
+        <h2>Research Interests</h2>
+        <ul>
+          <li>Retrieval-Augmented Generation and knowledge-augmented language models</li>
+          <li>Information retrieval, multi-hop retrieval, and graph-based retrieval</li>
+          <li>LLM evaluation, reasoning reliability, and hallucination detection</li>
+          <li>Efficient adaptation and training-free methods for large language models</li>
+          <li>Applied machine learning for finance, manufacturing, and industrial services</li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Selected Research Projects</h2>
+
+        <div class="item">
+          <div class="item-title">Query-Aware Flow Diffusion for Graph-Based RAG</div>
+          <div class="meta">Manuscript in preparation · Retrieval-Augmented Generation · Graph Retrieval</div>
+          <p>
+            A training-free framework for query-aware edge reweighting and adaptive graph traversal in graph-based RAG. The project explores how flow diffusion can improve subgraph recovery and reduce unnecessary LLM calls in multi-hop question answering.
+          </p>
+          <div class="project-links">[Paper coming soon] [Code coming soon]</div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">Compression and Uncertainty Signals for Passage-Level RAG</div>
+          <div class="meta">Research project · RAG Efficiency · Uncertainty Estimation</div>
+          <p>
+            This project studies whether bottleneck-style compression and uncertainty signals can help distinguish useful passages from distractors while maintaining answer quality in retrieval-augmented generation.
+          </p>
+          <div class="project-links">[Code coming soon]</div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">LLM Evaluation for Knowledge-Intensive Tasks</div>
+          <div class="meta">Ongoing · LLM Evaluation · Information Retrieval</div>
+          <p>
+            A practical evaluation track for testing LLM reliability on knowledge-intensive and retrieval-dependent tasks, with emphasis on reproducible experiments, clear baselines, and error analysis.
+          </p>
+        </div>
+      </section>
+
+      <section id="news">
+        <h2>News and Updates</h2>
+        <ul>
+          <li><strong>May 2026:</strong> Building research projects in RAG, LLM evaluation, and information retrieval.</li>
+          <li><strong>2026:</strong> Preparing for Georgia Tech OMSCS and future Ph.D. applications in Computer Science.</li>
+          <li><strong>2025–2026:</strong> Exploring AI applications in digital finance and industrial innovation.</li>
+        </ul>
+      </section>
+
+      <footer>
+        © 2026 Ding Wu. Built with GitHub Pages.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
