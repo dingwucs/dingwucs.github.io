@@ -5,55 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ding Wu</title>
   <meta name="description" content="Ding Wu, M.S. in Computer Science at Georgia Tech. Knowledge editing, retrieval-augmented generation, and evaluation of large language models." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --text: #1f2328;
-      --muted: #59636e;
-      --faint: #8b949e;
-      --line: #e5e7eb;
-      --link: #2563eb;
-      --accent: #2563eb;
-      --accent-soft: #eff4ff;
-      --bg: #ffffff;
-      --soft: #f8fafc;
-      --code-bg: #f6f8fa;
-      --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      --text: #222;
+      --muted: #666;
+      --line: #ddd;
+      --link: #1a4f8b;
+      --bg: #fff;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --text: #e6edf3;
-        --muted: #9da7b3;
-        --faint: #7d8590;
-        --line: #30363d;
-        --link: #6ea8fe;
-        --accent: #6ea8fe;
-        --accent-soft: #15233b;
-        --bg: #0d1117;
-        --soft: #161b22;
-        --code-bg: #161b22;
+        --text: #ddd;
+        --muted: #999;
+        --line: #3a3a3a;
+        --link: #8db4e2;
+        --bg: #161616;
       }
-
-      .thumb img {
-        filter: brightness(0.92);
-      }
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
       background: var(--bg);
-      line-height: 1.6;
-      font-size: 16px;
+      color: var(--text);
+      font-family: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.55;
+      font-optical-sizing: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 20px 64px;
     }
 
     a {
@@ -65,386 +53,211 @@
       text-decoration: underline;
     }
 
-    .page {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 40px 24px 56px;
-      display: grid;
-      grid-template-columns: 236px minmax(0, 1fr);
-      gap: 48px;
-    }
-
-    /* ---------- sidebar ---------- */
-    .sidebar {
-      position: sticky;
-      top: 28px;
-      align-self: start;
-      border-right: 1px solid var(--line);
-      padding-right: 26px;
-    }
-
-    .avatar {
-      width: 150px;
-      height: 150px;
-      border-radius: 12px;
-      object-fit: cover;
-      background: var(--soft);
-      border: 1px solid var(--line);
-      display: block;
-      margin-bottom: 18px;
-    }
-
-    .name {
-      font-size: 28px;
-      line-height: 1.2;
-      margin: 0 0 8px;
-      font-weight: 700;
-    }
-
-    .title {
-      color: var(--muted);
-      font-size: 15px;
-      margin-bottom: 16px;
-    }
-
-    .contact {
-      font-family: var(--mono);
-      font-size: 13px;
-      margin: 16px 0;
-      word-break: break-all;
-    }
-
-    .contact div {
-      margin: 6px 0;
-    }
-
-    .contact .label {
-      color: var(--faint);
-    }
-
-    .nav {
-      margin-top: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 15px;
-    }
-
-    .nav a {
-      color: var(--muted);
-    }
-
-    .nav a::before {
-      content: "# ";
-      font-family: var(--mono);
-      color: var(--faint);
-    }
-
-    .nav a:hover {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    /* ---------- main ---------- */
-    main {
-      min-width: 0;
-    }
-
-    section {
-      margin-bottom: 34px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--line);
-      scroll-margin-top: 24px;
-    }
-
-    section:last-of-type {
-      border-bottom: none;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin: 0 0 16px;
-      line-height: 1.25;
-    }
-
-    h3 {
-      font-size: 13px;
-      font-family: var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--faint);
-      font-weight: 600;
-      margin: 22px 0 12px;
-    }
-
-    p {
+    h1 {
+      font-size: 34px;
+      font-weight: 400;
+      letter-spacing: 0.01em;
       margin: 0 0 14px;
     }
 
-    ul {
-      margin: 0;
-      padding-left: 22px;
+    h2 {
+      font-size: 21px;
+      font-weight: 600;
+      margin: 44px 0 14px;
     }
 
-    li {
-      margin: 6px 0;
+    h3 {
+      font-size: 17px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--muted);
+      margin: 26px 0 12px;
     }
 
-    .keywords {
+    p {
+      margin: 0 0 12px;
+    }
+
+    /* ---------- intro ---------- */
+    .intro {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 4px;
+      gap: 36px;
+      align-items: flex-start;
     }
 
-    .chip {
-      font-family: var(--mono);
-      font-size: 12.5px;
-      padding: 2px 10px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
+    .intro-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .contact {
+      margin-top: 14px;
+    }
+
+    .contact .sep {
+      color: var(--muted);
+      margin: 0 6px;
     }
 
     /* ---------- news ---------- */
     .news {
       list-style: none;
-      padding-left: 0;
+      padding: 0;
+      margin: 0;
     }
 
     .news li {
-      display: grid;
-      grid-template-columns: 82px minmax(0, 1fr);
-      gap: 12px;
-      margin: 0 0 8px;
-    }
-
-    .news time {
-      font-family: var(--mono);
-      font-size: 13.5px;
-      color: var(--faint);
-      padding-top: 2px;
-    }
-
-    /* ---------- research themes ---------- */
-    .themes {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      display: flex;
       gap: 16px;
+      margin: 0 0 6px;
     }
 
-    .theme {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 16px 18px;
-      background: var(--soft);
-    }
-
-    .theme-title {
-      font-weight: 650;
-      margin-bottom: 4px;
-    }
-
-    .theme-meta {
-      font-family: var(--mono);
-      font-size: 12.5px;
-      color: var(--faint);
-      margin-bottom: 10px;
-    }
-
-    .theme p {
-      font-size: 15px;
-      margin-bottom: 10px;
-    }
-
-    .theme .refs {
-      font-family: var(--mono);
-      font-size: 12.5px;
+    .news .date {
+      flex: 0 0 76px;
       color: var(--muted);
+      font-variant-numeric: tabular-nums;
     }
 
     /* ---------- publications ---------- */
-    .note {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
     .pub {
-      display: grid;
-      grid-template-columns: 220px minmax(0, 1fr);
-      gap: 20px;
-      margin: 0 0 24px;
-      align-items: start;
+      display: flex;
+      gap: 24px;
+      margin: 0 0 28px;
     }
 
     .thumb {
-      display: block;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff;
-      padding: 6px;
-      overflow: hidden;
+      flex: 0 0 190px;
     }
 
     .thumb img {
       display: block;
       width: 100%;
       height: auto;
-      border-radius: 4px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .pub-body {
+      flex: 1;
+      min-width: 0;
     }
 
     .pub-title {
-      font-weight: 650;
-      line-height: 1.4;
-      margin-bottom: 3px;
-    }
-
-    .pub-authors {
-      font-size: 15px;
+      font-weight: 600;
     }
 
     .pub-venue {
+      font-style: italic;
+    }
+
+    .pub-desc {
+      margin: 6px 0 0;
+    }
+
+    .pub-links {
+      margin-top: 4px;
+    }
+
+    .pub-links .sep {
       color: var(--muted);
-      font-size: 14.5px;
-      margin-top: 2px;
+      margin: 0 4px;
     }
 
-    .tag {
-      display: inline-block;
-      font-family: var(--mono);
-      font-size: 12px;
-      line-height: 1.6;
-      padding: 0 7px;
-      margin-right: 6px;
-      border-radius: 4px;
-      border: 1px solid var(--line);
-      background: var(--soft);
-      color: var(--text);
-      vertical-align: 1px;
+    details.bib {
+      display: inline;
     }
 
-    .tldr {
-      font-size: 14.5px;
-      color: var(--muted);
-      margin: 8px 0;
-    }
-
-    .tldr b {
-      font-family: var(--mono);
-      font-size: 12.5px;
-      color: var(--accent);
-      font-weight: 600;
-      margin-right: 6px;
-    }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: flex-start;
-    }
-
-    .btn {
-      display: inline-block;
-      font-family: var(--mono);
-      font-size: 12.5px;
-      padding: 2px 10px;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      color: var(--text);
-      background: var(--bg);
+    details.bib summary {
+      display: inline;
+      color: var(--link);
       cursor: pointer;
       list-style: none;
     }
 
-    .btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    details.bib > summary::-webkit-details-marker {
+    details.bib summary::-webkit-details-marker {
       display: none;
     }
 
-    details.bib[open] {
-      flex-basis: 100%;
+    details.bib summary:hover {
+      text-decoration: underline;
     }
 
     details.bib pre {
-      font-family: var(--mono);
-      font-size: 12px;
-      line-height: 1.5;
-      background: var(--code-bg);
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      padding: 10px 12px;
+      font-size: 13px;
+      line-height: 1.45;
+      background: transparent;
+      border-left: 2px solid var(--line);
+      padding: 4px 0 4px 12px;
       margin: 8px 0 0;
       overflow-x: auto;
-      white-space: pre;
     }
 
-    .edu {
-      list-style: none;
-      padding-left: 0;
+    .note {
+      color: var(--muted);
     }
 
-    .edu li {
+    /* ---------- experience / education ---------- */
+    .entry {
+      margin: 0 0 14px;
+    }
+
+    .entry-head {
       display: flex;
       justify-content: space-between;
       gap: 16px;
-      margin: 0 0 8px;
     }
 
-    .edu .when {
-      font-family: var(--mono);
-      font-size: 13.5px;
-      color: var(--faint);
+    .entry-head .when {
+      color: var(--muted);
       white-space: nowrap;
-      padding-top: 2px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .entry-role {
+      font-style: italic;
     }
 
     footer {
-      color: var(--faint);
-      font-family: var(--mono);
-      font-size: 12.5px;
-      margin-top: 30px;
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 15px;
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 640px) {
       .page {
-        display: block;
-        padding: 26px 16px 42px;
+        padding: 36px 16px 48px;
       }
 
-      .sidebar {
-        position: static;
-        border-right: none;
-        border-bottom: 1px solid var(--line);
-        padding-right: 0;
-        padding-bottom: 22px;
-        margin-bottom: 28px;
+      .intro {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
       }
 
       .avatar {
-        width: 132px;
-        height: 132px;
-      }
-
-      .themes {
-        grid-template-columns: minmax(0, 1fr);
+        width: 150px;
+        height: 150px;
       }
 
       .pub {
-        grid-template-columns: minmax(0, 1fr);
+        flex-direction: column;
         gap: 10px;
       }
 
       .thumb {
-        max-width: 420px;
+        flex-basis: auto;
+        max-width: 360px;
       }
 
-      .edu li {
+      .entry-head {
         flex-direction: column;
         gap: 0;
       }
@@ -453,116 +266,63 @@
 </head>
 <body>
   <div class="page">
-    <aside class="sidebar">
-      <img class="avatar" src="avatar.jpg" alt="Ding Wu" onerror="this.style.display='none'" />
-
-      <h1 class="name">Ding Wu</h1>
-      <div class="title">M.S. in Computer Science<br />Georgia Institute of Technology</div>
-
-      <div class="contact">
-        <div><span class="label">email:</span> <a href="mailto:dwu423@gatech.edu">dwu423@gatech.edu</a></div>
-        <div><span class="label">code:</span> <a href="https://github.com/dingwucs">github.com/dingwucs</a></div>
-        <div><span class="label">orcid:</span> <a href="https://orcid.org/0009-0008-3590-7389">0009-0008-3590-7389</a></div>
+    <div class="intro">
+      <div class="intro-text">
+        <h1>Ding Wu</h1>
+        <p>
+          I am an M.S. student in Computer Science at the <a href="https://www.gatech.edu/">Georgia Institute of Technology</a>, studying while employed. I am interested in how large language models acquire, store, and update knowledge, both through retrieval and through parameter editing, and in evaluating these systems carefully enough that real gains can be told apart from artifacts of the experimental setup.
+        </p>
+        <p>
+          Since 2026 I have been a remote research intern with <a href="https://lliutianc.github.io/">Tianci Liu</a> at the University of Tennessee, working on knowledge editing. I also work as a researcher at the Yangtze River Delta Digital Finance Industry Research Center. Before moving into computer science, I studied social policy and data analytics at the University of Pennsylvania and economics (mathematical track) at Fudan University.
+        </p>
+        <div class="contact">
+          <a href="mailto:dwu423@gatech.edu">Email</a><span class="sep">/</span><a href="https://github.com/dingwucs">GitHub</a><span class="sep">/</span><a href="https://orcid.org/0009-0008-3590-7389">ORCID</a>
+        </div>
       </div>
+      <img class="avatar" src="avatar.jpg" alt="Photo of Ding Wu" />
+    </div>
 
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#news">News</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#education">Education</a>
-      </nav>
-    </aside>
+    <h2>News</h2>
+    <ul class="news">
+      <li><span class="date">Oct 2026</span><span>Our preprint with Tianci Liu and collaborators on unstructured knowledge editing, <a href="https://arxiv.org/abs/2610.02772">FOVEATED</a>, is out on arXiv.</span></li>
+      <li><span class="date">Aug 2026</span><span>Started the M.S. in Computer Science at Georgia Tech.</span></li>
+      <li><span class="date">Aug 2026</span><span>Effective-Source Reliability was accepted to ICONIP 2026.</span></li>
+      <li><span class="date">Jul 2026</span><span>Presented work on AI-generated rewrites in ranked retrieval at the SynthIR workshop at SIGIR 2026.</span></li>
+    </ul>
 
-    <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>
-          I am an M.S. student in Computer Science at Georgia Tech, studying while employed. I study how large language models acquire, store, and update knowledge reliably, through retrieval and through parameter editing, and how to evaluate these systems so that real gains can be told apart from artifacts of the experimental setup.
-        </p>
-        <p>
-          I also work as a researcher at the Yangtze River Delta Digital Finance Industry Research Center, on fintech and digital currency. Before moving into computer science, I studied social policy and data analytics at the University of Pennsylvania and economics (mathematical track) at Fudan University.
-        </p>
-        <div class="keywords">
-          <span class="chip">knowledge editing</span>
-          <span class="chip">retrieval-augmented generation</span>
-          <span class="chip">LLM reliability</span>
-          <span class="chip">evaluation methodology</span>
-        </div>
-      </section>
+    <h2>Publications</h2>
+    <p class="note">* equal contribution</p>
 
-      <section id="news">
-        <h2>News</h2>
-        <ul class="news">
-          <li><time datetime="2026-10">Oct 2026</time><span>Our preprint with Tianci Liu and collaborators on unstructured knowledge editing, <a href="https://arxiv.org/abs/2610.02772">FOVEATED</a>, is out on arXiv.</span></li>
-          <li><time datetime="2026-08">Aug 2026</time><span>Started the M.S. in Computer Science at Georgia Tech.</span></li>
-          <li><time datetime="2026-08">Aug 2026</time><span>Effective-Source Reliability accepted to ICONIP 2026.</span></li>
-          <li><time datetime="2026-07">Jul 2026</time><span>Work on AI-generated rewrites in ranked retrieval presented at the SynthIR workshop, SIGIR 2026.</span></li>
-        </ul>
-      </section>
-
-      <section id="research">
-        <h2>Research</h2>
-        <div class="themes">
-          <div class="theme">
-            <div class="theme-title">Knowledge editing for LLMs</div>
-            <div class="theme-meta">2026 – present · Research Intern (remote), University of Tennessee, advised by Tianci Liu</div>
-            <p>
-              In a project led by Tianci Liu, we study why unstructured editors can reproduce an editing passage yet fail to recall its individual facts once the passage is gone. The resulting method, FOVEATED, shifts RoPE positions during editing so that each sentence is learned from a focused view. As a co-first author, I mainly reproduced and diagnosed editing baselines and ran ablations and failure analysis.
-            </p>
-            <div class="refs">→ MEMIT · AlphaEdit · AnyEdit · UnKE · Llama-3 · Qwen</div>
-          </div>
-          <div class="theme">
-            <div class="theme-title">Reliability of retrieval-augmented generation</div>
-            <div class="theme-meta">2026 – present · independent research, while employed</div>
-            <p>
-              When one false claim is copied or paraphrased across many nominal sources, agreement-based reliability scoring counts the copies as independent votes. Effective-Source Reliability merges near-duplicate sources first, so a laundered claim counts once. A related study shows that AI-generated rewrites keep their ranking while hiding where the evidence came from.
-            </p>
-            <div class="refs">→ source laundering · false consensus · source lineage</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="publications">
-        <h2>Publications</h2>
-        <p class="note">* denotes equal contribution</p>
-
-        <h3>Preprints</h3>
-        <div class="pub">
-          <a class="thumb" href="https://arxiv.org/abs/2610.02772"><img src="assets/foveated.jpg" alt="Pre-edit loss across passage positions: native loss falls for later positions while FOVEATED views keep it higher" loading="lazy" /></a>
-          <div>
-            <div class="pub-title">Improving Atomic-Fact Recall via Focused Views in Unstructured Knowledge Editing</div>
-            <div class="pub-authors"><strong>Ding Wu</strong>*, Ye Zhang*, Haoyu Wang, Tianci Liu</div>
-            <div class="pub-venue"><span class="tag">arXiv 2026</span>Under review.</div>
-            <p class="tldr"><b>TL;DR</b>Later facts in a passage look easier to learn than they are. Editing on RoPE-shifted focused views counteracts this underestimation and improves atomic-fact recall.</p>
-            <div class="links">
-              <a class="btn" href="https://arxiv.org/abs/2610.02772">arXiv</a>
-              <a class="btn" href="https://arxiv.org/pdf/2610.02772">PDF</a>
-              <details class="bib">
-                <summary class="btn">BibTeX</summary>
+    <h3>Preprints</h3>
+    <div class="pub">
+      <a class="thumb" href="https://arxiv.org/abs/2610.02772"><img src="assets/foveated.jpg" alt="Pre-edit loss across passage positions: native loss falls for later positions while FOVEATED views keep it higher" loading="lazy" /></a>
+      <div class="pub-body">
+        <div class="pub-title">Improving Atomic-Fact Recall via Focused Views in Unstructured Knowledge Editing</div>
+        <div><strong>Ding Wu</strong>*, Ye Zhang*, Haoyu Wang, Tianci Liu</div>
+        <div><span class="pub-venue">arXiv preprint</span>, 2026. Under review.</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2610.02772">arXiv</a><span class="sep">/</span><a href="https://arxiv.org/pdf/2610.02772">pdf</a><span class="sep">/</span><details class="bib"><summary>bibtex</summary>
 <pre>@article{wu2026foveated,
   title   = {Improving Atomic-Fact Recall via Focused Views
              in Unstructured Knowledge Editing},
   author  = {Wu, Ding and Zhang, Ye and Wang, Haoyu and Liu, Tianci},
   journal = {arXiv preprint arXiv:2610.02772},
   year    = {2026}
-}</pre>
-              </details>
-            </div>
-          </div>
+}</pre></details>
         </div>
+        <p class="pub-desc">In a passage being edited, later sentences already have low loss because earlier sentences give them context, so the editor underestimates how much it still has to learn. Editing on RoPE-shifted views of each sentence removes this shortcut and improves recall of individual facts.</p>
+      </div>
+    </div>
 
-        <h3>Conference Papers</h3>
-        <div class="pub">
-          <div class="thumb"><img src="assets/esr.jpg" alt="Source laundering: four nominal sources copy one origin and outvote the independent correct source four to one" loading="lazy" /></div>
-          <div>
-            <div class="pub-title">Effective-Source Reliability for Controlled Source-Laundering Stress Tests in Retrieval-Augmented Generation</div>
-            <div class="pub-authors"><strong>Ding Wu</strong></div>
-            <div class="pub-venue"><span class="tag">ICONIP 2026</span>International Conference on Neural Information Processing, Springer LNCS.</div>
-            <p class="tldr"><b>TL;DR</b>Copies of one unreliable origin forge a false consensus. Merging near-duplicate sources into effective sources before scoring reliability keeps the copies from outvoting the truth.</p>
-            <div class="links">
-              <details class="bib">
-                <summary class="btn">BibTeX</summary>
+    <h3>Conference Papers</h3>
+    <div class="pub">
+      <div class="thumb"><img src="assets/esr.jpg" alt="Source laundering: four nominal sources copy one origin and outvote the independent correct source four to one" loading="lazy" /></div>
+      <div class="pub-body">
+        <div class="pub-title">Effective-Source Reliability for Controlled Source-Laundering Stress Tests in Retrieval-Augmented Generation</div>
+        <div><strong>Ding Wu</strong></div>
+        <div><span class="pub-venue">International Conference on Neural Information Processing (ICONIP)</span>, 2026.</div>
+        <div class="pub-links">
+          <details class="bib"><summary>bibtex</summary>
 <pre>@inproceedings{wu2026esr,
   title     = {Effective-Source Reliability for Controlled Source-Laundering
                Stress Tests in Retrieval-Augmented Generation},
@@ -571,24 +331,21 @@
   series    = {Lecture Notes in Computer Science},
   publisher = {Springer},
   year      = {2026}
-}</pre>
-              </details>
-            </div>
-          </div>
+}</pre></details>
         </div>
+        <p class="pub-desc">When copies of one false claim appear under several nominal sources, agreement-based reliability scoring counts them as independent votes. Merging near-duplicate sources into effective sources before scoring keeps the copies from outvoting the truth.</p>
+      </div>
+    </div>
 
-        <h3>Workshop Papers</h3>
-        <div class="pub">
-          <a class="thumb" href="https://github.com/XDeadlocked/SynthIR_Web/blob/main/papers/relevant-but-hard-to-recover.pdf"><img src="assets/synthir.jpg" alt="Heatmap and bar charts: rewrites often outrank the original passage while surface similarity drops and embedding similarity stays high" loading="lazy" /></a>
-          <div>
-            <div class="pub-title">Relevant but Hard to Recover: An Empirical Study of AIGC Rewrites in Ranked Retrieval</div>
-            <div class="pub-authors"><strong>Ding Wu</strong></div>
-            <div class="pub-venue"><span class="tag">SynthIR @ SIGIR 2026</span>SIGIR 2026 Workshop on Synthetic Content in Information Retrieval Ecosystems.</div>
-            <p class="tldr"><b>TL;DR</b>AI-generated rewrites often outrank their own source passage under sparse and dense retrievers while surface overlap drops, so relevance metrics alone cannot tell whether evidence is independent.</p>
-            <div class="links">
-              <a class="btn" href="https://github.com/XDeadlocked/SynthIR_Web/blob/main/papers/relevant-but-hard-to-recover.pdf">PDF</a>
-              <details class="bib">
-                <summary class="btn">BibTeX</summary>
+    <h3>Workshop Papers</h3>
+    <div class="pub">
+      <a class="thumb" href="https://github.com/XDeadlocked/SynthIR_Web/blob/main/papers/relevant-but-hard-to-recover.pdf"><img src="assets/synthir.jpg" alt="Heatmap and bar charts: rewrites often outrank the original passage while surface similarity drops and embedding similarity stays high" loading="lazy" /></a>
+      <div class="pub-body">
+        <div class="pub-title">Relevant but Hard to Recover: An Empirical Study of AIGC Rewrites in Ranked Retrieval</div>
+        <div><strong>Ding Wu</strong></div>
+        <div><span class="pub-venue">SIGIR Workshop on Synthetic Content in Information Retrieval Ecosystems (SynthIR)</span>, 2026.</div>
+        <div class="pub-links">
+          <a href="https://github.com/XDeadlocked/SynthIR_Web/blob/main/papers/relevant-but-hard-to-recover.pdf">pdf</a><span class="sep">/</span><details class="bib"><summary>bibtex</summary>
 <pre>@inproceedings{wu2026synthir,
   title     = {Relevant but Hard to Recover: An Empirical Study of
                AIGC Rewrites in Ranked Retrieval},
@@ -596,26 +353,36 @@
   booktitle = {SIGIR 2026 Workshop on Synthetic Content in
                Information Retrieval Ecosystems (SynthIR)},
   year      = {2026}
-}</pre>
-              </details>
-            </div>
-          </div>
+}</pre></details>
         </div>
-      </section>
+        <p class="pub-desc">AI-generated rewrites often outrank their own source passage under both sparse and dense retrievers while their surface overlap with it drops, so relevance metrics alone cannot tell whether two pieces of evidence are independent.</p>
+      </div>
+    </div>
 
-      <section id="education">
-        <h2>Education</h2>
-        <ul class="edu">
-          <li><span><strong>Georgia Institute of Technology</strong>, M.S. in Computer Science (OMSCS)</span><span class="when">2026 – present</span></li>
-          <li><span><strong>University of Pennsylvania</strong>, M.S. in Social Policy and Data Analytics</span><span class="when">2020 – 2022</span></li>
-          <li><span><strong>Fudan University</strong>, B.Econ., Mathematical Track</span><span class="when">2015 – 2019</span></li>
-        </ul>
-      </section>
+    <h2>Experience</h2>
+    <div class="entry">
+      <div class="entry-head"><span><strong>University of Tennessee</strong></span><span class="when">2026 – present</span></div>
+      <div class="entry-role">Research Intern (remote), advised by Tianci Liu</div>
+      <div>Knowledge editing for LLMs. Co-first author on FOVEATED, a project led by Tianci Liu; I mainly reproduced and diagnosed editing baselines (MEMIT, AlphaEdit, AnyEdit, UnKE) and ran ablations and failure analysis.</div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span><strong>Yangtze River Delta Digital Finance Industry Research Center</strong></span><span class="when">2022 – present</span></div>
+      <div class="entry-role">Researcher</div>
+      <div>Research and policy writing on blockchain, digital currency, and fintech.</div>
+    </div>
 
-      <footer>
-        © 2026 Ding Wu · last updated 2026-10
-      </footer>
-    </main>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head"><span><strong>Georgia Institute of Technology</strong>, M.S. in Computer Science</span><span class="when">2026 – present</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span><strong>University of Pennsylvania</strong>, M.S. in Social Policy and Data Analytics</span><span class="when">2020 – 2022</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span><strong>Fudan University</strong>, B.Econ., Mathematical Track</span><span class="when">2015 – 2019</span></div>
+    </div>
+
+    <footer>Last updated October 2026.</footer>
   </div>
 </body>
 </html>
