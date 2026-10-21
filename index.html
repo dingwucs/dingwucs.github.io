@@ -153,6 +153,49 @@
       color: #333;
     }
 
+    .pubs {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .pubs li {
+      margin: 0 0 16px;
+    }
+
+    .pub-title {
+      font-weight: 600;
+    }
+
+    .pub-venue {
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      line-height: 1.5;
+      padding: 0 7px;
+      margin-right: 6px;
+      border-radius: 4px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      color: #333;
+      vertical-align: 1px;
+    }
+
+    h3 {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 600;
+      margin: 18px 0 10px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     footer {
       color: var(--muted);
       font-size: 13px;
@@ -188,62 +231,105 @@
       <img class="avatar" src="avatar.jpg" alt="Ding Wu" onerror="this.style.display='none'" />
 
       <h1 class="name">Ding Wu</h1>
-      <div class="title">Computer Science · Artificial Intelligence · NLP</div>
+      <div class="title">M.S. in Computer Science<br />Georgia Institute of Technology</div>
 
       <div class="contact">
         <div><strong>Email:</strong> <a href="mailto:dingwucs@gmail.com">dingwucs@gmail.com</a></div>
+        <div><a href="https://github.com/dingwucs">GitHub</a> · <a href="https://orcid.org/0009-0008-3590-7389">ORCID</a></div>
       </div>
 
       <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#research">Research</a>
         <a href="#education">Education</a>
-        <a href="#interests">Research Interests</a>
-        <a href="#projects">Projects</a>
       </nav>
     </aside>
 
     <main>
       <section id="about">
-
         <h2>About</h2>
         <p>
-          I am interested in computer science research, especially artificial intelligence and natural language processing. My broader interests include machine learning, language models, information retrieval, and AI applications.
+          I am an M.S. student in Computer Science at Georgia Tech. I study how large language models acquire, store, and update knowledge reliably, through retrieval and through parameter editing, and how to evaluate these systems so that real gains can be told apart from artifacts of the experimental setup.
         </p>
+        <p>
+          My work spans knowledge editing, reliability of retrieval-augmented generation (RAG), and evaluation methodology. Before moving into computer science, I studied social policy and data analytics at the University of Pennsylvania and economics (mathematical track) at Fudan University.
+        </p>
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+        <p class="note">* denotes equal contribution</p>
+
+        <h3>Conference Papers</h3>
+        <ul class="pubs">
+          <li>
+            <div class="pub-title">Effective-Source Reliability for Controlled Source-Laundering Stress Tests in Retrieval-Augmented Generation</div>
+            <div><strong>Ding Wu</strong></div>
+            <div class="pub-venue"><span class="tag">ICONIP 2026</span>International Conference on Neural Information Processing, Springer LNCS. An earlier version appeared as a poster at the KDD 2026 Workshop on Secure and Trustworthy LLMs (SeT-LLM, non-archival).</div>
+          </li>
+        </ul>
+
+        <h3>Preprints</h3>
+        <ul class="pubs">
+          <li>
+            <div class="pub-title">Improving Atomic-Fact Recall via Focused Views in Unstructured Knowledge Editing</div>
+            <div><strong>Ding Wu</strong>*, Ye Zhang*, Haoyu Wang, Tianci Liu</div>
+            <div class="pub-venue"><span class="tag">arXiv 2026</span><a href="https://arxiv.org/abs/2610.02772">arXiv:2610.02772</a>. Under review.</div>
+          </li>
+        </ul>
+
+        <h3>Workshop Papers and Manuscripts</h3>
+        <ul class="pubs">
+          <li>
+            <div class="pub-title">Relevant but Hard to Recover: An Empirical Study of AIGC Rewrites in Ranked Retrieval</div>
+            <div><strong>Ding Wu</strong></div>
+            <div class="pub-venue"><span class="tag">SynthIR @ SIGIR 2026</span>SIGIR 2026 Workshop on Synthetic Content in Information Retrieval Ecosystems. <a href="https://github.com/XDeadlocked/SynthIR_Web/blob/main/papers/relevant-but-hard-to-recover.pdf">PDF</a></div>
+          </li>
+          <li>
+            <div class="pub-title">When Relation-Free Retrieval Is Not Relation-Aware: A Directionality Stress Test for Linear Graph RAG</div>
+            <div><strong>Ding Wu</strong></div>
+            <div class="pub-venue">Manuscript, 2026.</div>
+          </li>
+          <li>
+            <div class="pub-title">PEFT Gains Need Hidden Baselines: Rank and Optimizer Sweeps Change LoRA Conclusions</div>
+            <div><strong>Ding Wu</strong></div>
+            <div class="pub-venue">Manuscript, 2026.</div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+
+        <div class="item">
+          <div class="item-title">Knowledge Editing for Large Language Models</div>
+          <div class="meta">2026 – present · with Tianci Liu (University of Tennessee) and Haoyu Wang (University at Albany)</div>
+          <p>
+            Unstructured knowledge editors often reproduce an editing passage but fail to recall its individual facts without that passage. We trace this to context-induced difficulty underestimation and propose FOVEATED, which builds focused views of each sentence by shifting RoPE positions during editing only. It improves five editors on two LLM backbones and three benchmarks.
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="item-title">Reliability and Evaluation of Retrieval-Augmented Generation</div>
+          <div class="meta">2026 – present · independent research</div>
+          <p>
+            When one false claim is copied or paraphrased across many nominal sources, it forges a consensus that agreement-based reliability methods trust. Effective-Source Reliability merges near-duplicate sources before estimating reliability. Related controlled stress tests show where standard retrieval metrics mislead, for AI-generated rewrites and for relation-free graph RAG.
+          </p>
+        </div>
       </section>
 
       <section id="education">
         <h2>Education</h2>
         <ul>
-          <li><strong>Georgia Institute of Technology</strong>, Online Master of Science in Computer Science, incoming Fall 2026</li>
-          <li><strong>University of Pennsylvania</strong>, M.S. in Social Policy and Data Analytics</li>
-          <li><strong>Fudan University</strong>, B.S. in Mathematical Economics</li>
+          <li><strong>Georgia Institute of Technology</strong>, M.S. in Computer Science (OMSCS), 2026 – present</li>
+          <li><strong>University of Pennsylvania</strong>, M.S. in Social Policy and Data Analytics, 2020 – 2022</li>
+          <li><strong>Fudan University</strong>, B.Econ., Mathematical Track, 2015 – 2019</li>
         </ul>
-      </section>
-
-      <section id="interests">
-        <h2>Research Interests</h2>
-        <ul>
-          <li>Artificial Intelligence</li>
-          <li>Natural Language Processing</li>
-          <li>Machine Learning</li>
-          <li>Information Retrieval</li>
-          <li>Large Language Models</li>
-        </ul>
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="item">
-          <div class="item-title">AI and NLP Research Projects</div>
-          <div class="meta">Ongoing</div>
-          <p>
-            I am currently working on research projects related to artificial intelligence, natural language processing, retrieval, and language models.
-          </p>
-        </div>
       </section>
 
       <footer>
-        © 2026 Ding Wu.
+        © 2026 Ding Wu · Last updated October 2026
       </footer>
     </main>
   </div>
