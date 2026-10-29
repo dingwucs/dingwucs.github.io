@@ -273,7 +273,7 @@
           I am an M.S. student in Computer Science at the <a href="https://www.gatech.edu/">Georgia Institute of Technology</a>, studying while employed. I am interested in how large language models acquire, store, and update knowledge, both through retrieval and through parameter editing, and in evaluating these systems carefully enough that real gains can be told apart from artifacts of the experimental setup.
         </p>
         <p>
-          Since 2026 I have been a remote research intern with <a href="https://lliutianc.github.io/">Prof. Tianci Liu</a> at the University of Tennessee, working on knowledge editing.
+          Since 2026 I have been a remote research intern advised by <a href="https://lliutianc.github.io/">Prof. Tianci Liu</a> (University of Tennessee), working on knowledge editing.
         </p>
         <div class="contact">
           <a href="mailto:dwu423@gatech.edu">Email</a><span class="sep">/</span><a href="https://github.com/dingwucs">GitHub</a><span class="sep">/</span><a href="https://orcid.org/0009-0008-3590-7389">ORCID</a>
@@ -284,7 +284,7 @@
 
     <h2>News</h2>
     <ul class="news">
-      <li><span class="date">Oct 2026</span><span>Our preprint with Prof. Tianci Liu and collaborators on unstructured knowledge editing, <a href="https://arxiv.org/abs/2610.02772">FOVEATED</a>, is out on arXiv.</span></li>
+      <li><span class="date">Oct 2026</span><span><a href="https://arxiv.org/abs/2610.02772">FOVEATED</a>, a preprint on unstructured knowledge editing from my research internship with Prof. Tianci Liu, is out on arXiv.</span></li>
       <li><span class="date">Aug 2026</span><span>Started the M.S. in Computer Science at Georgia Tech.</span></li>
       <li><span class="date">Aug 2026</span><span>Effective-Source Reliability was accepted to ICONIP 2026.</span></li>
       <li><span class="date">Jul 2026</span><span>Presented work on AI-generated rewrites in ranked retrieval at the SynthIR workshop at SIGIR 2026.</span></li>
@@ -358,12 +358,32 @@
         <p class="pub-desc">AI-generated rewrites often outrank their own source passage under both sparse and dense retrievers while their surface overlap with it drops, so relevance metrics alone cannot tell whether two pieces of evidence are independent.</p>
       </div>
     </div>
+    <div class="pub">
+      <div class="thumb"><img src="assets/peft.jpg" alt="Bar chart: AdaLoRA and LoRA-RITE win most cells against default LoRA settings but only one cell each against modestly tuned LoRA" loading="lazy" /></div>
+      <div class="pub-body">
+        <div class="pub-title">PEFT Gains Need Hidden Baselines: Rank and Optimizer Sweeps Change LoRA Conclusions</div>
+        <div><strong>Ding Wu</strong></div>
+        <div><span class="pub-venue">EMNLP Workshop on Insights from Negative Results in NLP (Insights)</span>, 2026.</div>
+        <div class="pub-links">
+          <details class="bib"><summary>bibtex</summary>
+<pre>@inproceedings{wu2026peft,
+  title     = {PEFT Gains Need Hidden Baselines: Rank and Optimizer
+               Sweeps Change LoRA Conclusions},
+  author    = {Wu, Ding},
+  booktitle = {EMNLP 2026 Workshop on Insights from Negative Results
+               in NLP (Insights)},
+  year      = {2026}
+}</pre></details>
+        </div>
+        <p class="pub-desc">In a small-budget case study, AdaLoRA and LoRA-RITE beat vanilla LoRA at its default settings in most cells but in only one cell each once vanilla LoRA gets a small rank and learning-rate sweep, so PEFT comparisons should report such tuned baselines.</p>
+      </div>
+    </div>
 
     <h2>Research Experience</h2>
     <div class="entry">
-      <div class="entry-head"><span><strong>University of Tennessee</strong></span><span class="when">2026 – present</span></div>
-      <div class="entry-role">Research Intern (remote), advised by Prof. Tianci Liu</div>
-      <div>Knowledge editing for LLMs. Co-first author on FOVEATED, a project led by Prof. Tianci Liu; I mainly reproduced and diagnosed editing baselines (MEMIT, AlphaEdit, AnyEdit, UnKE) and ran ablations and failure analysis.</div>
+      <div class="entry-head"><span><strong>Knowledge Editing for LLMs</strong></span><span class="when">2026 – present</span></div>
+      <div class="entry-role">Research Intern (remote), advised by Prof. Tianci Liu (University of Tennessee)</div>
+      <div>Co-first author on FOVEATED, a project led by Prof. Tianci Liu; I mainly reproduced and diagnosed editing baselines (MEMIT, AlphaEdit, AnyEdit, UnKE) and ran ablations and failure analysis.</div>
     </div>
 
     <h2>Education</h2>
